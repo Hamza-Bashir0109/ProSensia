@@ -1,40 +1,46 @@
 #include<iostream>
 #include<fstream>
-usingnamespace std;
+using namespace std;
 
-classstudent{public:
-stringrollno,name,department;floatcgpa;
+class student{
+    public:
+string rollno,name,department;
+float cgpa;
 
-voidgetdata(){
-cout<<"enterrollno:";cin>>rollno;
-cout<<"entername:";cin>>name;
-cout<<"enterdepartment:";cin>>department;
-cout<<"entercgpa:";cin>>cgpa;
+void getdata(){
+cout<<"enterrollno:";
+cin>>rollno;
+cout<<"entername:";
+cin>>name;
+cout<<"enterdepartment:";
+cin>>department;
+cout<<"entercgpa:";
+cin>>cgpa;
 }
 
-voidshowdata(){
+void showdata(){
 cout<<"rollno:"<<rollno<<endl;
 cout<<"name:"<<name<<endl;
 cout<<"department:"<<department<<endl;
 cout<<"cgpa:"<<cgpa<<endl;
 }
 
-stringgetroll(){
-returnrollno;
+string getroll(){
+return rollno;
 }
 };
 
-voidaddstudent(){
-studentnewstudent;
+void addstudent(){
+student newstudent;
 newstudent.getdata();
-ofstreamfile("students.txt",ios::app);
+ofstream file("students.txt",ios::app);
 file<<newstudent.rollno<<" "<<newstudent.name<<" "<<newstudent.department<<" "<<newstudent.cgpa<<endl;
 file.close();
 }
 
-voidshowall(){
-ifstreamfile("students.txt");
-studenttemp;
+void showall(){
+ifstream file("students.txt");
+student temp;
 
 while(file>>temp.rollno>>temp.name>>temp.department>>temp.cgpa){
 temp.showdata();
@@ -44,12 +50,13 @@ cout<<"----------"<<endl;
 file.close();
 }
 
-voidfindstudent(){
-ifstreamfile("students.txt");
-studenttemp;
-stringtarget;
-cout<<"enterrollno:";cin>>target;
-boolfound=false;
+void findstudent(){
+ifstream file("students.txt");
+student temp;
+string target;
+cout<<"enterrollno:";
+cin>>target;
+bool found=false;
 
 while(file>>temp.rollno>>temp.name>>temp.department>>temp.cgpa){
 if(temp.getroll()==target){
@@ -63,13 +70,14 @@ file.close();
 if(!found)cout<<"notfound"<<endl;
 }
 
-voidupdatestudent(){
-ifstreaminfile("students.txt");
-ofstreamtempfile("temp.txt");
-studenttemp;
-stringtarget;
-cout<<"enterrollno:";cin>>target;
-boolupdated=false;
+void updatestudent(){
+ifstream infile("students.txt");
+ofstream tempfile("temp.txt");
+student temp;
+string target;
+cout<<"enterrollno:";
+cin>>target;
+bool updated=false;
 
 while(infile>>temp.rollno>>temp.name>>temp.department>>temp.cgpa){
 if(temp.getroll()==target){
@@ -88,13 +96,14 @@ if(updated)cout<<"updated\n";
 else cout<<"notfound\n";
 }
 
-voiddeletestudent(){
-ifstreaminfile("students.txt");
-ofstreamtempfile("temp.txt");
-studenttemp;
-stringtarget;
-cout<<"enterrollno:";cin>>target;
-booldeleted=false;
+void deletestudent(){
+ifstream infile("students.txt");
+ofstream tempfile("temp.txt");
+student temp;
+string target;
+cout<<"enterrollno:";
+cin>>target;
+bool deleted=false;
 
 while(infile>>temp.rollno>>temp.name>>temp.department>>temp.cgpa){
 if(temp.getroll()!=target){
@@ -114,21 +123,27 @@ if(deleted)cout<<"deleted\n";
 else cout<<"notfound\n";
 }
 
-intmain(){
-intchoice;
+int main(){
+int choice;
 
 while(true){
 cout<<"1:add\n2:view\n3:search\n4:update\n5:delete\n6:exit\nchoice:";
 cin>>choice;
 
-if(choice==1)addstudent();
-elseif(choice==2)showall();
-elseif(choice==3)findstudent();
-elseif(choice==4)updatestudent();
-elseif(choice==5)deletestudent();
-elseif(choice==6)break;
+if(choice==1)
+addstudent();
+else if(choice==2)
+showall();
+else if(choice==3)
+findstudent();
+else if(choice==4)
+updatestudent();
+else if(choice==5)
+deletestudent();
+else if(choice==6)
+break;
 else cout<<"invalid\n";
 }
 
-return0;
+return 0;
 }
