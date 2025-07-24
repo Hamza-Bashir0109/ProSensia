@@ -1,55 +1,55 @@
 #include<iostream>
-usingnamespace std;
+using namespace std;
 
-classcomplexnumber{public:
-floatrealpart,imaginarypart;
+class complexnumber{public:
+float realpart,imaginarypart;
 
 complexnumber(){
 realpart=0;
 imaginarypart=0;
 }
 
-complexnumber(floatr,floati){
+complexnumber(float r,float i){
 realpart=r;
 imaginarypart=i;
 }
 
-voidshowresult(){
+void showresult(){
 cout<<"result:"<<realpart;
 if(imaginarypart>=0)cout<<"+";
 cout<<imaginarypart<<"i"<<endl;
 }
 
-complexnumberoperator+(complexnumberother){
-returncomplexnumber(realpart+other.realpart,imaginarypart+other.imaginarypart);
+complexnumber operator+(complexnumber other){
+return complexnumber(realpart+other.realpart,imaginarypart+other.imaginarypart);
 }
 
-complexnumberoperator-(complexnumberother){
-returncomplexnumber(realpart-other.realpart,imaginarypart-other.imaginarypart);
+complexnumber operator-(complexnumber other){
+return complexnumber(realpart-other.realpart,imaginarypart-other.imaginarypart);
 }
 
-complexnumberoperator*(complexnumberother){
-floatnewreal=realpart*other.realpart-imaginarypart*other.imaginarypart;
-floatnewimag=realpart*other.imaginarypart+imaginarypart*other.realpart;
-returncomplexnumber(newreal,newimag);
+complexnumber operator*(complexnumberother){
+float newreal=realpart*other.realpart-imaginarypart*other.imaginarypart;
+float newimag=realpart*other.imaginarypart+imaginarypart*other.realpart;
+return complexnumber(newreal,newimag);
 }
 
-booloperator==(complexnumberother){
+bool operator==(complexnumber other){
 return(realpart==other.realpart&&imaginarypart==other.imaginarypart);
 }
 };
 
-intmain(){
+int main(){
 
-complexnumbernum1(2,3),num2(1,4);
+complexnumber num1(2,3),num2(1,4);
 
-complexnumbersum=num1+num2;
+complexnumber sum=num1+num2;
 sum.showresult();
 
-complexnumberdiff=num1-num2;
+complexnumber diff=num1-num2;
 diff.showresult();
 
-complexnumberproduct=num1*num2;
+complexnumber product=num1*num2;
 product.showresult();
 
 if(num1==num2)
@@ -57,5 +57,5 @@ cout<<"equal"<<endl;
 else
 cout<<"not_equal"<<endl;
 
-return0;
+return 0;
 }
