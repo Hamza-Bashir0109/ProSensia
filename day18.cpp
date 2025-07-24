@@ -28,7 +28,7 @@ complexnumber operator-(complexnumber other){
 return complexnumber(realpart-other.realpart,imaginarypart-other.imaginarypart);
 }
 
-complexnumber operator*(complexnumberother){
+complexnumber operator*(complexnumber other){
 float newreal=realpart*other.realpart-imaginarypart*other.imaginarypart;
 float newimag=realpart*other.imaginarypart+imaginarypart*other.realpart;
 return complexnumber(newreal,newimag);
