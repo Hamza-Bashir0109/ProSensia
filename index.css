@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #8e9eab, #eef2f3);
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 350px;
+  margin-top: 40px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.travellers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.travellers button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.travellers span {
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+button#planTrip {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #00c896;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f9f9f9;
+}

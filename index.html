@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Travel Agent</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="app">
+    <h2>AI Travel Agent</h2>
+
+    <label>Number of travellers</label>
+    <div class="travellers">
+      <button id="decrease">-</button>
+      <span id="travellers">1</span>
+      <button id="increase">+</button>
+    </div>
+
+    <label>Flying from</label>
+    <input type="text" id="fromCity" placeholder="New York City" />
+
+    <label>Flying to</label>
+    <input type="text" id="toCity" placeholder="Paris" />
+
+    <label>From Date</label>
+    <input type="date" id="fromDate" />
+
+    <label>To Date</label>
+    <input type="date" id="toDate" />
+
+    <label>Budget</label>
+    <input type="number" id="budget" placeholder="5000" />
+
+    <button id="planTrip">Plan my Trip!</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
